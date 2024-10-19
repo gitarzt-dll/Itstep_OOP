@@ -90,28 +90,24 @@ for i in range(5):
 
 
 
-import logging
-import time
+class GeneratorIterator:
+    def __init__(self, data):
+        self.data = data
+
+    def __iter__(self):
+        return self.generator()
+
+    def generator(self):
+        for item in self.data:
+            yield item
+
+my_list = [1, 2, 3, 4, 5]
+iterable = GeneratorIterator(my_list)
+
+for zhopa in iterable:
+    print(zhopa)
 
 
-logging.basicConfig(filename='timing.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-
-def example_function():
-    time.sleep(2)
-
-
-start_time = time.time()
-result = example_function()
-end_time = time.time()
-execution_time = end_time - start_time
-
-
-logging.info(f"Функція 'example_function' виконана за {execution_time:.4f} секунд")
-
-
-print(f"Результат: {result}")
-print(f"Час виконання: {execution_time:.4f} секунд")
 
 
 
