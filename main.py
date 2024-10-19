@@ -23,6 +23,7 @@ print(next(count))
 print(iter(count))
 print(next(count))
   '''
+from time import sleep
 
 '''def degress (number):
     i = 0
@@ -90,22 +91,22 @@ for i in range(5):
 
 
 
-class GeneratorIterator:
-    def __init__(self, data):
-        self.data = data
+import colorama
+import inspect
 
-    def __iter__(self):
-        return self.generator()
 
-    def generator(self):
-        for item in self.data:
-            yield item
+print(dir(colorama))
+help(colorama)
 
-my_list = [1, 2, 3, 4, 5]
-iterable = GeneratorIterator(my_list)
+print(inspect.getmembers(colorama, inspect.isclass))
 
-for zhopa in iterable:
-    print(zhopa)
+sleep(2)
+print("Fore and Back - для кольорів")
+sleep(2)
+print("Скидання стилів (Style.reset_all)")
+sleep(2.5)
+print("Інспекція виповнена успішно!")
+
 
 
 
