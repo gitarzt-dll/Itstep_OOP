@@ -1,27 +1,124 @@
-class Student:
-    def __init__(self, name):
-        self.name = name
+'''class Counter:
+    def __init__(self, max_num):
+        self.max_num = max_num
+        self.i = 0
 
-class School:
-    def __init__(self):
-        self.students = []
+    def __iter__(self):
+        self.i = 0
+        return self
 
-    def add_student(self, student):
-        self.students.append(student)
+    def __next__(self):
+        self.i += 1
+        if self.i > self.max_num:
+            raise StopIteration
+        return self.i
 
-    def print_students(self):
-        if self.students:
-            print("все ученики")
-            for student in self.students:
-                print(student.name)
-        else:
-            print("школа пустая")
+count = Counter(5)
+for element in count:
+    print(element)
 
-schol = School()
+print(count.__next__())
+print(count.__iter__())
+print(next(count))
+print(iter(count))
+print(next(count))
+  '''
 
-for _ in range(3):
-    student_name = input("Имя учня ")
-    student = Student(student_name)
-    schol.add_student(student)
+'''def degress (number):
+    i = 0
+    while True:
+        result = number**i
+        yield result
+        if result > 100**20:
+            return i
+        i += 1
 
-schol.print_students()
+
+
+res = degress(122345)
+print(res)
+for a in res:
+    print(a)
+    '''
+'''def helper(work):
+    work_in_memory = work
+    def helper(work):
+        return f'Я мушу допомогти тобі з {work_in_memory}. Після чого я допоможу виконати{work}'
+    return helper
+
+helper = helper("homework")
+print(helper(" cleaning"))
+print(helper(" driving"))
+    '''
+''''class Number:
+    def __init__(self, limit):
+        self.limit = limit
+        self.current = 0
+
+    def __iter__(self):
+        return self
+
+
+    def __next__(self):
+        while self.current < self.limit:
+            if self.current % 2 == 0:
+                num = self.current
+                self.current += 1
+
+                return num
+            self.current += 1
+        raise StopIteration
+
+iterator = Number(10)
+for i in iterator:
+    print(i)
+    '''
+
+'''import random
+
+def cord_generate():
+    while True:
+        yield random.randint(0, 100), random.randint(0, 100)
+
+coord = cord_generate()
+for i in range(5):
+    x, y = next(coord)
+    print(f"X: {x} Y: {y}")
+        '''
+
+
+
+
+
+import logging
+import time
+
+
+logging.basicConfig(filename='timing.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+
+def example_function():
+    time.sleep(2)
+
+
+start_time = time.time()
+result = example_function()
+end_time = time.time()
+execution_time = end_time - start_time
+
+
+logging.info(f"Функція 'example_function' виконана за {execution_time:.4f} секунд")
+
+
+print(f"Результат: {result}")
+print(f"Час виконання: {execution_time:.4f} секунд")
+
+
+
+
+
+
+
+
+
+
